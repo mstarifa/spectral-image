@@ -31,7 +31,9 @@ include_once "config.php";
             filter: grayscale(100%);
         }
     </style>
-
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 </head>
 <body class="alt-menu">
     <!-- BEGIN LOADER -->
@@ -67,14 +69,13 @@ include_once "config.php";
                         <div class="card b-l-card-1 h-100" style="border: none;-webkit-box-shadow: 0 0.1px 0px rgba(0, 0, 0, 0.002), 0 0.2px 0px rgba(0, 0, 0, 0.003), 0 0.4px 0px rgba(0, 0, 0, 0.004), 0 0.6px 0px rgba(0, 0, 0, 0.004), 0 0.9px 0px rgba(0, 0, 0, 0.005), 0 1.2px 0px rgba(0, 0, 0, 0.006), 0 1.8px 0px rgba(0, 0, 0, 0.006), 0 2.6px 0px rgba(0, 0, 0, 0.007), 0 3.9px 0px rgba(0, 0, 0, 0.008), 0 7px 0px rgba(0, 0, 0, 0.01); -moz-box-shadow: 0 0.1px 0px rgba(0, 0, 0, 0.002), 0 0.2px 0px rgba(0, 0, 0, 0.003), 0 0.4px 0px rgba(0, 0, 0, 0.004), 0 0.6px 0px rgba(0, 0, 0, 0.004), 0 0.9px 0px rgba(0, 0, 0, 0.005), 0 1.2px 0px rgba(0, 0, 0, 0.006), 0 1.8px 0px rgba(0, 0, 0, 0.006), 0 2.6px 0px rgba(0, 0, 0, 0.007), 0 3.9px 0px rgba(0, 0, 0, 0.008), 0 7px 0px rgba(0, 0, 0, 0.01); box-shadow: 0 0.1px 0px rgba(0, 0, 0, 0.002), 0 0.2px 0px rgba(0, 0, 0, 0.003), 0 0.4px 0px rgba(0, 0, 0, 0.004), 0 0.6px 0px rgba(0, 0, 0, 0.004), 0 0.9px 0px rgba(0, 0, 0, 0.005), 0 1.2px 0px rgba(0, 0, 0, 0.006), 0 1.8px 0px rgba(0, 0, 0, 0.006), 0 2.6px 0px rgba(0, 0, 0, 0.007), 0 3.9px 0px rgba(0, 0, 0, 0.008), 0 7px 0px rgba(0, 0, 0, 0.01); ">
                             <h5 class="card-title mt-2"><?php echo $row["title"] ?></h5>
                             <div id='pnt<?php echo $row["id"] ?>' >
-                                <img id='my_img<?php echo $row["id"] ?>' class="card-img-top" src="images/<?php echo $row["img"] ?>" alt="Card image cap">
+                                <img id='my_img<?php echo $row["id"] ?>' class="card-img-top" src="images/<?php echo $row["img"] ?>" alt="">
                             </div>
                             <div class="card-body">
                                 <strong class="card-category"><?php echo $row["width"] ?> x <?php echo $row["height"] ?>, Size: <?php echo $row["filesize"] ?> kb </strong>
                                
-                                <p class="card-text meta-info meta-time mb-2"><small class="">White picture <span class="btn btn-success btn-sm" onclick='printDiv(<?php echo $row["id"] ?>,"<?php echo $row["img"] ?>")'>download</span></small></p>
+                                <p class="card-text meta-info meta-time mb-2"><small class="">White picture <a class="btn btn-success btn-sm" target="_blank" href="img.php?img=<?php echo $row["img"] ?>">download</a></small></p>
                                 <p class="card-text mb-4"><?php echo $row["description"] ?></p>
-                                <!-- <button class="btn btn-outline-warning mt-2">Read More</button> -->
                             </div>
                         </div>
                     </div>
